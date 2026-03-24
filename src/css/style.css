@@ -1,0 +1,23 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+#edit-user-card{
+  display: none;
+}
+.user-card{
+  display: none;
+}
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+    line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+input, button {
+  font: inherit;
+}
+p, h2, h3, h4 {
+  overflow-wrap: break-word;
+}
