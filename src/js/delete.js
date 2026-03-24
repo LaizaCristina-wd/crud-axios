@@ -1,37 +1,24 @@
-import { createUser} from "./api.js";
+import { deleteUser } from "./api.js";
+//deletar usuário
 
-//criar usuário
+export async function handleDelete(event){
+  const button = event.target.closest(".delete-btn");
+    if(!button) return;
+  const id = button.dataset.id;
 
- export async function handleCreate(event){
-  event.preventDefault();
- const name = document.getElementById("name").value;
- const age = document.getElementById("age").value;
- const email = document.getElementById("email").value;
 
- const newUser = { name, age, email };
+  console.log("id capturado:", id);
+  const confirmou = confirm("Deletar usuário?");
+  if(!confirmou) return;
   try {
-     const createdUser = await createUser(newUser);
-    addUserCard(createdUser);
-  } catch (error) {
-    console.error("Erro ao criar usuário", error);
+    await deleteUser(id); 
+   
+    const card = button.closest(".user-card");
+    if(card){
+      card.remove();
+    }
+
+  } catch(error){
+    console.error("Erro ao deletar:", error);
   }
-}
-//parte visual
-export function addUserCard(user) {
-  const container = document.getElementById("usersList");
-  const template = document.getElementById("user-template");
-
-  const clone = template.cloneNode(true);
-
-  clone.style.display = "block";
-  clone.removeAttribute("id");
-  clone.querySelector(".user-name").textContent = `${user.name}`;
-  clone.querySelector(".user-age").textContent = `${user.age}`;
-  clone.querySelector(".user-email").textContent = `${user.email}`;
-
-
-  clone.querySelector(".edit-btn").dataset.id = user.id;
-  clone.querySelector(".delete-btn").dataset.id = user.id;
-
-  container.appendChild(clone);
 }

@@ -4,18 +4,21 @@ import { createUser} from "./api.js";
 
  export async function handleCreate(event){
   event.preventDefault();
+ const form = event.target;
  const name = document.getElementById("name").value;
  const age = document.getElementById("age").value;
  const email = document.getElementById("email").value;
 
  const newUser = { name, age, email };
   try {
-     const createdUser = await createUser(newUser);
+    const createdUser = await createUser(newUser);
     addUserCard(createdUser);
+     form.reset();
   } catch (error) {
     console.error("Erro ao criar usuário", error);
   }
-}
+  }
+
 //parte visual
 export function addUserCard(user) {
   const container = document.getElementById("usersList");
