@@ -19,7 +19,7 @@ import { createUser} from "./api.js";
   }
   }
 
-//parte visual
+//parte visual usando clone para copiar a classe do html e preenche-lo com js visualmente
 export function addUserCard(user) {
   const container = document.getElementById("usersList");
   const template = document.getElementById("user-template");
