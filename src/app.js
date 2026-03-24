@@ -9,6 +9,7 @@
     setupEventListeners();
     loadUsers();
   }
+  //meu render
   export async function loadUsers(){
     try {
      const containerUser = document.getElementById("usersList");
