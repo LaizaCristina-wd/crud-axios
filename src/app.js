@@ -4,7 +4,7 @@
   import { handleCreate, addUserCard } from "./js/create.js";
   import { handleDelete } from "./js/delete.js";  
 
-  
+  //funções para carregar os usuários na tela
   function init() {
     setupEventListeners();
     loadUsers();
