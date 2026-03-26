@@ -1,9 +1,3 @@
 import { createApp } from "vue"
-
-createApp({
-  data(){
-    return {
-      mensagem: "Vue funcionando"
-    }
-  }
-}).mount("#app")
+import App from "./App.vue"
+createApp(App).mount("#app")

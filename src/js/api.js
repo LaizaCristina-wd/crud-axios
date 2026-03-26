@@ -1,5 +1,5 @@
   import axios from "https://cdn.jsdelivr.net/npm/axios@1.6.7/+esm";
-  const API_URL = "http://localhost:8000/api/users";
+  const API_URL = "/api/users";
 
   export async function getUsers(){
     try {
