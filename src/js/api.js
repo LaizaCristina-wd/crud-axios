@@ -80,4 +80,3 @@
     throw new Error(message);
     }
   }
-  //funções fetch
